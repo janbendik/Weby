@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valtice — čo treba vidieť · 30 fotografií</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Spectral:wght@300;400;500&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  html{color-scheme:light only}
+  :root{
+    --ink:#241a14;
+    --paper:#f4ece0;
+    --paper-2:#ece0cf;
+    --wine:#6e1f2a;
+    --wine-soft:#9a3b41;
+    --gold:#b8893b;
+    --line:#cdbca4;
+    --shadow:0 18px 40px -22px rgba(48,28,18,.55);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #fbf5ea 0%, transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    font-family:"Spectral",Georgia,serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+
+  header.hero{
+    padding:64px 26px 30px;
+    max-width:1180px;margin:0 auto;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .kicker{
+    font-family:"Archivo",sans-serif;
+    letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--wine);font-weight:700;
+    margin:0 0 16px;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;font-size:clamp(2.6rem,7vw,5.4rem);
+    line-height:.95;margin:0 0 14px;letter-spacing:-.01em;
+  }
+  h1 em{font-style:italic;color:var(--wine)}
+  .lead{
+    font-size:clamp(1.02rem,1.6vw,1.22rem);
+    max-width:60ch;color:#4a382b;margin:0;
+  }
+  .meta{
+    display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px;
+    font-family:"Archivo",sans-serif;font-size:.8rem;letter-spacing:.04em;
+    color:#6b513e;
+  }
+  .meta b{color:var(--ink)}
+
+  .note{
+    max-width:1180px;margin:26px auto 0;padding:0 26px;
+  }
+  .note-inner{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    padding:16px 20px;border-radius:4px;
+    font-size:.92rem;color:#54402f;
+  }
+  .note-inner b{color:var(--wine)}
+
+  section.group{padding:30px 0 4px}
+  .group-head{
+    display:flex;align-items:baseline;gap:16px;
+    margin:34px 0 18px;
+  }
+  .group-num{
+    font-family:"Fraunces",serif;font-style:italic;
+    font-size:1.4rem;color:var(--gold);
+  }
+  .group-head h2{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(1.5rem,3vw,2.1rem);margin:0;letter-spacing:-.01em;
+  }
+  .group-head .rule{flex:1;height:1px;background:var(--line);transform:translateY(-6px)}
+  .group-desc{margin:-4px 0 20px;color:#4a382b;font-size:1.02rem;line-height:1.6;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+  .group-desc b{color:var(--wine)}
+  .cap-desc{font-size:.86rem;color:#5a4636;line-height:1.42;margin:2px 0 2px}
+
+  .grid{
+    display:grid;gap:22px;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  }
+  figure.card{
+    margin:0;background:#fffaf2;border:1px solid var(--line);
+    border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  figure.card:hover{transform:translateY(-4px);box-shadow:0 26px 52px -22px rgba(48,28,18,.6)}
+  .imgbox{position:relative;aspect-ratio:4/3;background:var(--paper-2);overflow:hidden}
+  .imgbox img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease;
+  }
+  figure.card:hover .imgbox img{transform:scale(1.04)}
+  .imgbox .ph{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:18px;color:#8a715b;font-size:.85rem;
+    font-family:"Archivo",sans-serif;
+  }
+  .badge{
+    position:absolute;top:10px;right:10px;
+    font-family:"Archivo",sans-serif;font-size:.62rem;letter-spacing:.06em;
+    background:rgba(36,26,20,.82);color:#f4ece0;
+    padding:4px 8px;border-radius:3px;font-weight:600;
+  }
+  figcaption{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .cap-t{font-size:1.02rem;font-weight:500;color:var(--ink);line-height:1.3}
+  .cap-b{
+    margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    border-top:1px dashed var(--line);padding-top:10px;
+  }
+  .src{
+    font-family:"Archivo",sans-serif;font-size:.74rem;letter-spacing:.03em;
+    color:var(--wine);text-decoration:none;font-weight:600;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .src:hover{text-decoration:underline}
+  .src svg{width:13px;height:13px}
+  .author{font-size:.72rem;color:#8a715b;font-family:"Archivo",sans-serif}
+
+  footer{
+    margin-top:56px;border-top:1px solid var(--line);
+    padding:30px 26px 70px;max-width:1180px;margin-left:auto;margin-right:auto;
+    font-size:.86rem;color:#6b513e;
+  }
+  footer b{color:var(--ink)}
+  .tools{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+  .btn{
+    font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.04em;
+    border:1px solid var(--wine);color:var(--wine);background:transparent;
+    padding:10px 18px;border-radius:4px;cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;
+  }
+  .btn:hover{background:var(--wine);color:var(--paper)}
+  @media print{
+    .tools,.note{display:none}
+    figure.card{break-inside:avoid;box-shadow:none}
+    body{background:#fff}
+  }
+  /* visit badge */
+  .meta .visit{
+    background:var(--wine);color:var(--paper);
+    padding:4px 12px;border-radius:20px;
+  }
+  .meta .visit b{color:var(--gold)}
+  /* info section */
+  .info{max-width:1180px;margin:50px auto 0;padding:0 26px}
+  .info-head{display:flex;align-items:baseline;gap:16px;margin:0 0 6px}
+  .info-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);margin:0}
+  .info-head .rule{flex:1;height:1px;background:var(--line);transform:translateY(-8px)}
+  .info-sub{color:#6b513e;font-size:.95rem;margin:0 0 22px}
+  .visit-banner{
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;
+    background:var(--wine);color:var(--paper);
+    border-radius:8px;padding:18px 24px;margin:0 0 26px;box-shadow:var(--shadow);
+  }
+  .visit-banner .vb-date{font-family:"Fraunces",serif;font-size:1.6rem;font-weight:600;color:var(--gold)}
+  .visit-banner .vb-txt{font-size:.95rem;max-width:62ch}
+  .visit-banner .vb-txt b{color:#fff}
+  .cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin:0 0 26px}
+  @media(max-width:620px){.cards2{grid-template-columns:1fr}}
+  .hours-wrap{margin:0 0 26px;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);background:#fffaf2}
+  .hours-wrap h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.25rem;margin:0;padding:16px 22px;background:var(--wine);color:var(--paper)}
+  table.hours{width:100%;border-collapse:collapse;font-size:.92rem}
+  table.hours th,table.hours td{text-align:left;padding:11px 22px;vertical-align:top;border-top:1px solid var(--line)}
+  table.hours thead th{background:var(--paper-2);color:var(--wine);font-family:"Archivo",sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border-top:none}
+  table.hours td.pam{font-weight:600;color:var(--ink);width:34%}
+  table.hours td.hrs{color:#4a382b}
+  table.hours tr:nth-child(even) td{background:rgba(231,217,194,.28)}
+  .hours-note{padding:13px 22px;font-size:.85rem;color:var(--mute,#8a715b);font-style:italic;border-top:1px solid var(--line)}
+  .vcard{background:#fffaf2;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+  .vcard h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.25rem;margin:0;padding:16px 22px;background:var(--wine);color:var(--paper)}
+  .vcard .vc-body{padding:16px 22px 20px}
+  .vc-row{margin:0 0 13px}
+  .vc-row:last-child{margin-bottom:0}
+  .vc-label{font-family:"Archivo",sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 3px}
+  .vc-val{font-size:.95rem;color:var(--ink);margin:0;line-height:1.45}
+  .vc-val a{color:var(--wine);font-weight:600;text-decoration:none}
+  .vc-val a:hover{text-decoration:underline}
+  .awards{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:18px 24px;margin:0 0 26px}
+  .awards h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;margin:0 0 10px;color:var(--wine)}
+  .awards ul{margin:0;padding-left:1.1rem;color:var(--ink);font-size:.95rem}
+  .awards li{margin:0 0 5px}
+  .feature{display:grid;grid-template-columns:1.6fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow);background:#fffaf2}
+  @media(max-width:760px){.feature{grid-template-columns:1fr}}
+  .feature .ft-txt{padding:24px 26px}
+  .feature .ft-kicker{font-family:"Archivo",sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--wine);font-weight:700;margin:0 0 8px}
+  .feature .ft-txt h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 12px;color:var(--ink);line-height:1.1}
+  .feature .ft-txt p{font-size:.96rem;color:#4a382b;margin:0 0 14px;line-height:1.55}
+  .feature .ft-side{background:var(--wine);color:var(--paper);padding:24px 26px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+  .feature .ft-side .fs-item b{color:var(--gold);display:block;font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+  .feature .ft-side .fs-item span{font-size:.93rem}
+  .btn-wine{display:inline-flex;align-items:center;gap:8px;font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.03em;background:var(--wine);color:var(--paper);padding:11px 20px;border-radius:5px;text-decoration:none}
+  .btn-wine:hover{background:var(--wine-soft)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Lednicko‑valtický areál · Južná Morava</p>
+  <h1>Valtice<br><em>čo treba vidieť</em></h1>
+  <p class="cap-desc">Štyridsaťjeden fotografií najvýznamnejších valtických pamiatok a zákutí — zámok, kolonáda na Reistne, Dianin chrám, kostol, bylinková záhrada, historické centrum, tajomné Valtické podzemie aj vinné sklepy CHÂTEAU VALTICE.</p>
+  <div class="meta">
+    <span class="visit"><b>Termín návštevy:</b> 1. júl 2026 (streda)</span>
+    <span><b>41</b> fotografií</span>
+    <span><b>Zdroj:</b> Wikimedia Commons</span>
+    <span><b>Licencia:</b> Creative Commons (voľné použitie s uvedením autora)</span>
+  </div>
+</header>
+
+<div class="note">
+  <div class="note-inner">
+    <b>Ako fotky stiahnuť:</b> každú fotku otvoríš cez odkaz <b>„Originál / zdroj“</b> na karte — dostaneš sa na stránku súboru na Wikimedia Commons, kde si stiahneš plné rozlíšenie a nájdeš meno autora a presnú licenciu. V galérii môžeš tiež kliknúť pravým tlačidlom na obrázok → „Uložiť obrázok ako…“. Ide o <b>voľne licencované</b> snímky (CC), takže ich smieš použiť aj v prezentáciách, no pri zverejnení uveď autora a licenciu podľa zdroja.
+  </div>
+</div>
+
+<main class="wrap" id="gallery"></main>
+
+<section class="group wrap" style="max-width:1180px;margin-left:auto;margin-right:auto;padding-left:26px;padding-right:26px">
+  <div class="group-head">
+    <span class="group-num">09</span>
+    <h2>CHÂTEAU VALTICE — vinné sklepy</h2><span class="rule"></span>
+  </div>
+  <p class="group-desc">Krátky pokec na záver: tieto zábery sú priamo z areálu rodinného vinárstva CHÂTEAU VALTICE. Keďže ide o jeho vlastné fotografie, <b>nie sú pod licenciou Creative Commons</b> ako zvyšok galérie — zobrazujú sa naživo z oficiálnej stránky a sú chránené autorským právom (© vsvaltice.cz). Pre vlastné použitie (napr. v prezentácii) si preto vyžiadaj súhlas vinárstva alebo použi voľné fotky z Commons.</p>
+  <div class="grid">
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">CHÂTEAU VALTICE</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2023/04/CHATEAU_VALTICE-PROMO.jpg" alt="CHÂTEAU VALTICE" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">36 · CHÂTEAU VALTICE</span>
+        <span class="cap-desc">Rodinné vinárstvo s koreňmi v 15. storočí. Jeho vína patria k špičke moravskej produkcie a pravidelne zbierajú ocenenia doma aj v zahraničí.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/o-vinarstvi/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">Vinařská stodola</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2018/10/CHATEAU_VALTICE_VINARSKA_STODOLA.jpg" alt="Vinařská stodola" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">37 · Vinařská stodola</span>
+        <span class="cap-desc">Stavba v štýle tradičného sedliackeho stavania s rozsiahlou vinotékou, posedením a kávou. Pod ňou sa skrýva Chrám vína prepojený s historickými sklepmi — ideálny štart prehliadky.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/degustace-vina/vinarska-stodola-valtice/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">Vinařská pohotovost</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2018/10/CHATEAU_VALTICE_VINARSKA_POHOTOVOST-1.jpg" alt="Vinařská pohotovost" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">38 · Vinařská pohotovost</span>
+        <span class="cap-desc">Pôvodne vrátnica, dnes nonstop predajňa sudových aj fľaškových vín s posedením pod pergolami. V lete grilované špeciality a detské ihrisko — rýchle občerstvenie pri prechádzke areálom.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/degustace-vina/vinarska-pohotovost/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">Chrám vína s rotundou</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2018/11/CHATEAU_VALTICE_VINARSKA_STODOLA_CHRAM-VINA.jpg" alt="Chrám vína s rotundou" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">39 · Chrám vína s rotundou</span>
+        <span class="cap-desc">Klenbový podzemný priestor pod Vinařskou stodolou, ktorý prepája historický Křížový sklep s modernými degustačnými priestormi.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/degustace-vina/chram-vina-s-rotundou/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">Zámecký sklep A.D. 1430</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2023/06/CHATEAU_VALTICE_katedrala_vin_sudy.jpg" alt="Zámecký sklep A.D. 1430" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">40 · Zámecký sklep A.D. 1430</span>
+        <span class="cap-desc">Jeden z najstarších a najväčších sklepov v Česku; v dubových sudoch tu zrejú najlepšie červené vína vinárstva.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/degustace-vina/zamecky-sklep-a-d-1430/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <figure class="card">
+      <div class="imgbox">
+        <div class="ph">Křížový sklep A.D. 1640</div>
+        <img loading="lazy" src="https://www.vsvaltice.cz/wp-content/uploads/2018/10/CHATEAU_VALTICE_KRIZOVY_SKLEP_AD_1640.jpg" alt="Křížový sklep A.D. 1640" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <span class="badge">© vsvaltice.cz</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">41 · Křížový sklep A.D. 1640</span>
+        <span class="cap-desc">Historický sklep v srdci vinárstva, súčasť prehliadkového okruhu spolu s Chrámom vína.</span>
+        <span class="cap-b">
+          <a class="src" href="https://www.vsvaltice.cz/vinne-sklepy/krizovy-sklep-a-d-1640/" target="_blank" rel="noopener">Otvoriť na vsvaltice.cz →</a>
+          <span class="author">© CHÂTEAU VALTICE</span>
+        </span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section class="info">
+  <div class="info-head">
+    <h2>Praktické informácie</h2>
+    <span class="rule"></span>
+  </div>
+  <p class="info-sub">Termín návštevy, otváracie hodiny a kontakty na valtické vinné sklepy.</p>
+
+  <div class="visit-banner">
+    <span class="vb-date">1. júl 2026</span>
+    <span class="vb-txt"><b>Termín návštevy — streda, hlavná sezóna.</b> V tento deň býva otvorený zámok Valtice (9:00–17:00), Dianin chrám (10:00–16:00), Kolonáda na Reistne (10:00–18:00), Bylinková záhrada (10:00–18:00), Valtické Podzemí (12:00–21:00) aj vinotéka CHÂTEAU VALTICE (10:00–18:00). Verejné komentované prehliadky stodoly CHÂTEAU bývajú v piatok a sobotu — na stredu si ich dohodni vopred (skupiny od 15 osôb). Konkrétne časy si pred cestou over na oficiálnych stránkach.</span>
+  </div>
+
+  <div class="cards2">
+    <div class="vcard">
+      <h3>Valtické Podzemí</h3>
+      <div class="vc-body">
+        <div class="vc-row"><p class="vc-label">Adresa</p><p class="vc-val">Vinařská č. ev. 34, 691 42 Valtice</p></div>
+        <div class="vc-row"><p class="vc-label">Otváracie hodiny</p><p class="vc-val">Hlavná sezóna (júl–august): denne; v stredu 12:00–21:00, piatok–sobota 10:00–24:00, nedeľa 10:00–15:00. Mimo sezóny obmedzené (hlavne piatok–nedeľa).</p></div>
+        <div class="vc-row"><p class="vc-label">Kontakt</p><p class="vc-val">infolinka +420 723 600 423 (po–pá 8:00–15:00)<br>info@valtickepodzemi.cz · <a href="https://www.valtickepodzemi.cz/" target="_blank" rel="noopener">valtickepodzemi.cz</a></p></div>
+        <div class="vc-row"><p class="vc-label">Čo tu nájdeš</p><p class="vc-val">Labyrint 13 historických sklepov (~900 m, hĺbka až 11 m), riadené degustácie so „sklepiérmi“, tematické večery s cimbalom. Titul Champion – TOP vinársky cieľ ČR.</p></div>
+      </div>
+    </div>
+    <div class="vcard">
+      <h3>CHÂTEAU VALTICE — Vinařská stodola</h3>
+      <div class="vc-body">
+        <div class="vc-row"><p class="vc-label">Adresa</p><p class="vc-val">Vinařská 407, 691 42 Valtice</p></div>
+        <div class="vc-row"><p class="vc-label">Otváracie hodiny (vinotéka)</p><p class="vc-val">po–št 10:00–18:00, pi–so 10:00–19:00, ne 09:30–15:00</p></div>
+        <div class="vc-row"><p class="vc-label">Prehliadky (apríl–november)</p><p class="vc-val">piatok 17:00 · sobota 15:00 a 17:00; skupiny od 15 osôb celoročne na objednávku</p></div>
+        <div class="vc-row"><p class="vc-label">Kontakt</p><p class="vc-val">+420 601 160 163 · stodola@vsvaltice.cz<br><a href="https://www.vsvaltice.cz/" target="_blank" rel="noopener">vsvaltice.cz</a></p></div>
+      </div>
+    </div>
+    <div class="vcard">
+      <h3>CHÂTEAU VALTICE — Vinařská pohotovost</h3>
+      <div class="vc-body">
+        <div class="vc-row"><p class="vc-label">Adresa</p><p class="vc-val">Vinařské náměstíčko, areál CHÂTEAU VALTICE, Valtice</p></div>
+        <div class="vc-row"><p class="vc-label">Otváracie hodiny</p><p class="vc-val">po–št 8:00–20:00, pi–so 8:00–22:00, ne 8:00–18:00</p></div>
+        <div class="vc-row"><p class="vc-label">Čo tu nájdeš</p><p class="vc-val">Predajňa sudových aj fľaškových vín s posedením pod pergolami, v lete grilované špeciality, čerstvý burčák a detské ihrisko.</p></div>
+        <div class="vc-row"><p class="vc-label">Kontakt</p><p class="vc-val">+420 721 010 674 · <a href="https://www.vsvaltice.cz/degustace-vina/vinarska-pohotovost/" target="_blank" rel="noopener">vsvaltice.cz</a></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hours-wrap">
+    <h3>Otváracie hodiny pamiatok (sezóna 2026)</h3>
+    <table class="hours">
+      <thead><tr><th>Pamiatka</th><th>Otváracie hodiny</th></tr></thead>
+      <tbody>
+        <tr><td class="pam">Zámok Valtice — hlavný okruh</td><td class="hrs">máj–sep: po–ne 9:00–17:00 · okt–10. nov: ut–ne 9:00–16:00 · potom zatvorené (prehliadky s priedvodcom, posledná hodinu pred koncom)</td></tr>
+        <tr><td class="pam">Knížecí byt — apartmán Františka I.</td><td class="hrs">jún a sep: čt–ne · júl–aug: po–ne · 10:00–17:00 (prehliadka vlastným tempom)</td></tr>
+        <tr><td class="pam">Dianin chrám (Rendez-vous)</td><td class="hrs">máj–jún: st–ne · júl–aug: ut–ne · sep: čt–ne — 10:00–16:00 · okt: so–ne 10:00–15:00</td></tr>
+        <tr><td class="pam">Kolonáda na Reistne</td><td class="hrs">apr–jún a sep: pi–ne 10:00–17:00 · júl–aug: po–ne 10:00–18:00 · okt: so–ne 11:00–16:00</td></tr>
+        <tr><td class="pam">Bylinková záhrada Lu &amp; Tiree Chmelar</td><td class="hrs">máj–jún a sep: po–pá 14:00–18:00, so–ne 10:00–18:00 · júl–aug: po–ne 10:00–18:00 · okt: pi 14:00–17:00, so–ne 10:00–17:00</td></tr>
+        <tr><td class="pam">Zámecký sklep A.D. 1430 (degustácie)</td><td class="hrs">máj–jún a sep: so 10:00–18:00, ne 10:00–16:00 · júl–aug: po–so 10:00–18:00, ne 10:00–15:00</td></tr>
+        <tr><td class="pam">Salón vín ČR (v zámockých sklepoch)</td><td class="hrs">celoročne podľa programu degustačnej expozície; rezervácia odporúčaná</td></tr>
+        <tr><td class="pam">Zámocká kaplnka a barokové divadlo</td><td class="hrs">len vo vybraných termínoch a pre vopred objednané skupiny (rezervácia: valtice@npu.cz)</td></tr>
+        <tr><td class="pam">Zámček Belveder</td><td class="hrs">exteriér voľne prístupný celoročne; interiér bežne neprístupný (v sezóne kaviareň Belveder)</td></tr>
+        <tr><td class="pam">Kostol Nanebovzatia Panny Márie</td><td class="hrs">prístupný najmä počas bohoslužieb; exteriér voľne prístupný</td></tr>
+        <tr><td class="pam">Valtické Podzemí</td><td class="hrs">viď karta vyššie — hlavná sezóna denne (streda 12:00–21:00, pi–so 10:00–24:00), mimo sezóny obmedzené</td></tr>
+        <tr><td class="pam">Vinné sklepy CHÂTEAU — stodola a pohotovost</td><td class="hrs">viď karty vyššie (vinotéka po–št 10:00–18:00; pohotovost po–št 8:00–20:00)</td></tr>
+        <tr><td class="pam">Mestské múzeum Valtice (nám. Svobody 4)</td><td class="hrs">máj–okt: st a pi 13:00–16:00, so–ne 10:00–12:00 a 13:00–16:00</td></tr>
+        <tr><td class="pam">Národné poľnohospodárske múzeum (NZM, nám. Svobody 8)</td><td class="hrs">apríl a okt: ut–pá 9:00–16:00, so–ne a sviatky 9:00–17:00 · máj–sep: denne 9:00–17:00 · nov: ut–ne a sviatky 10:00–14:00 (zima zatvorené) — vstupenka na zámok platí aj sem</td></tr>
+        <tr><td class="pam">Múzeum železnej opony Valtice</td><td class="hrs">apríl: so–ne a sviatky · máj–jún: pi–ne a sviatky · júl–aug: denne · sep–okt: víkendy a sviatky — 10:00–17:00 (zima zatvorené; skupiny po dohode kedykoľvek)</td></tr>
+        <tr><td class="pam">Katzelsdorfský zámček a ďalšie ciele</td><td class="hrs">vlastné otváracie hodiny — over na <a href="https://www.valtice.eu/turistika/turisticke-cile/" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">valtice.eu</a></td></tr>
+      </tbody>
+    </table>
+    <p class="hours-note">Hodiny platia pre návštevnícku sezónu 2026 a počas sviatkov sa môžu líšiť. Vždy over na oficiálnych stránkach: zamek-valtice.cz, bylinkovazahradavaltice.cz, valtickepodzemi.cz, vsvaltice.cz, nzm.cz, muzeum.webnode.cz a muzeumopony.cz. Údaje o pamiatkach v správe štátu: zdroj Národní památkový ústav.</p>
+  </div>
+
+  <div class="awards">
+    <h3>Ocenenia CHÂTEAU VALTICE</h3>
+    <ul>
+      <li>Vinařství roku Českej republiky 2014</li>
+      <li>Prvý červený Champion Salónu vín ČR (2016)</li>
+      <li>Vína zastúpené v stálej degustačnej expozícii Salón vín ČR</li>
+      <li>Pravidelné úspechy na súťažiach Grand Prix Vinex, Prague Wine Trophy a ďalších</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <div class="ft-txt">
+      <p class="ft-kicker">Rodinné vinárstvo s tradíciou</p>
+      <h3>CHÂTEAU VALTICE — Vinné sklepy</h3>
+      <p>Jedno z najstarších a najvýznamnejších moravských vinárstiev s históriou siahajúcou až do 15. storočia. Značka CHÂTEAU VALTICE patrí dlhodobo k špičke domácich aj medzinárodných súťaží. Za vínom sa tu dá vydať do Vinařskej stodoly s rozsiahlou vinotékou, k podzemnému Chrámu vína s rotundou, do Křížového sklepa A.D. 1640 a do Zámeckého sklepa A.D. 1430, kde v dubových sudoch zrejú najlepšie červené vína.</p>
+      <a class="btn-wine" href="https://www.vsvaltice.cz/" target="_blank" rel="noopener">Navštíviť vsvaltice.cz →</a>
+    </div>
+    <div class="ft-side">
+      <div class="fs-item"><b>Prehliadkové okruhy</b><span>Malý okruh 290 Kč · Veľký okruh 360 Kč (degustácia 5 vzoriek)</span></div>
+      <div class="fs-item"><b>Posedenie pri cimbale</b><span>apríl–november, vstup zdarma a bez rezervácie</span></div>
+      <div class="fs-item"><b>Zámecký sklep A.D. 1430</b><span>jeden z najstarších a najväčších sklepov v ČR</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="tools">
+    <button class="btn" onclick="window.print()">🖨︎ Tlač / Uložiť ako PDF</button>
+    <a class="btn" href="https://commons.wikimedia.org/wiki/Category:Valtice" target="_blank" rel="noopener">Všetky fotky Valtíc na Commons →</a>
+  </div>
+  <p style="margin-bottom:14px"><b>Vinné sklepy — oficiálne stránky:</b> <a href="https://www.valtickepodzemi.cz/" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Valtické Podzemí</a> (labyrint 13 historických sklepov, ~900 m) &nbsp;·&nbsp; <a href="https://www.vsvaltice.cz/" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">CHÂTEAU VALTICE — Vinné sklepy</a> (Vinařská stodola, Chrám vína, Zámecký sklep A.D. 1430). Viac fotiek vinných sklepov nájdete priamo na týchto stránkach.</p>
+  <p><b>Poznámka k licenciám.</b> Všetky snímky pochádzajú z Wikimedia Commons a sú dostupné pod licenciami Creative Commons (najčastejšie CC BY‑SA 3.0/4.0). To znamená, že ich možno voľne používať a upravovať <b>za podmienky uvedenia autora a licencie</b> a zachovania rovnakej licencie pri ďalšom šírení. Presné údaje o autorovi a licencii nájdeš po kliknutí na odkaz „Originál / zdroj“ pri každej fotke.</p>
+</footer>
+
+<script>
+const groups = [
+  {
+    title: "Zámok Valtice",
+    desc: "Monumentálny barokový zámok vyrástol na mieste stredovekého hradu a po stáročia bol hlavným sídlom kniežacieho rodu Lichtenštajnovcov. Na jeho dnešnej podobe sa podieľali poprední architekti svojej doby a patrí k najvýznamnejším barokovým rezidenciám v strednej Európe. Vnútri na návštevníkov čakajú reprezentačné sály so štukami a freskami, zámocká kaplnka, barokové divadlo i rozľahlý park s francúzskou záhradou; v zámockých pivniciach navyše sídli Salón vín Českej republiky.",
+    items: [
+      { f:"Valtice zámek.JPG", t:"Hlavné priečelie zámku" },
+      { f:"Vstup do zámku, Valtice.JPG", t:"Vstupná brána do zámku" },
+      { f:"Valtice - Garden Front Zámek.jpg", t:"Záhradné priečelie" },
+      { f:"Valtice - Inner Court Castle.jpg", t:"Vnútorné nádvorie" },
+      { f:"Valtice - Main Entrance Castle - View SW.jpg", t:"Hlavný vstup, pohľad od juhozápadu" },
+      { f:"Valtice - Liechtenstein Castle 01.jpg", t:"Lichtenštajnský zámok — celkový pohľad" },
+      { f:"Valtice - Coats of Arms from Liechtenstein Family.jpg", t:"Erb rodu Lichtenštajnovcov" },
+      { f:"Castell de Valtice - Església.jpg", t:"Zámocký kostol" },
+      { f:"Valtice, zámek,3.JPG", t:"Zámok z parkovej strany" }
+    ]
+  },
+  {
+    title: "Zámček Belveder",
+    desc: "Elegantný empírový letohrádok dali Lichtenštajnovci postaviť ako jeden z článkov rozsiahlej komponovanej krajiny. Pôvodne k nemu patrila bažantnica a slúžil na odpočinok a reprezentáciu pri poľovačkách. Dnes stojí osamotene uprostred polí a vinohradov a tvorí jednu z charakteristických krajinných dominánt Lednicko‑valtického areálu.",
+    items: [
+      { f:"Valtice, Belveder.jpg", t:"Belveder — lovecký letohrádok" },
+      { f:"Valtice Zámek Belvedere.JPG", t:"Belveder, čelný pohľad" },
+      { f:"Valtice - zámeček Belveder, obr01.jpg", t:"Belveder v krajine" }
+    ]
+  },
+  {
+    title: "Dianin chrám (Rendezvous)",
+    desc: "Lovecký zámček v podobe antického víťazného oblúka vznikol začiatkom 19. storočia ako miesto stretnutí a oddychu po poľovačkách – odtiaľ jeho druhý názov Rendezvous. Priečelie zdobí bohatá sochárska výzdoba s motívmi bohyne lovu Diany a výjavmi z antickej mytológie. Stavba je jedným z romantických solitérov, ktoré dotvárajú parkovú krajinu medzi Valticami a Lednicou.",
+    items: [
+      { f:"Chrám Diany - Rendez-vous 01.jpg", t:"Dianin chrám — triumfálny oblúk" },
+      { f:"Chrám Diany - Rendez-vous 02.jpg", t:"Dianin chrám, bočný pohľad" },
+      { f:"Valtice,Rendez-vous, detail fasády.JPG", t:"Detail výzdoby fasády" }
+    ]
+  },
+  {
+    title: "Kolonáda na Reistne",
+    desc: "Monumentálna kolonáda v tvare gréckeho víťazného oblúka stojí na vŕšku Homole (Reisten) nad vinicami. Dal ju vybudovať knieža Ján I. Jozef z Lichtenštajna na pamiatku svojho otca a zosnulých bratov. Na streche je vyhliadková terasa, z ktorej sa za jasného počasia otvára pohľad na Pálavu, Mikulov so Svätým kopčekom, rakúske pohraničie i slovenské Malé Karpaty.",
+    items: [
+      { f:"Kolonáda (Valtice).JPG", t:"Kolonáda na vrchu Homole" },
+      { f:"Kolonáda (Valtice), Valtice.JPG", t:"Kolonáda — pohľad spredu" },
+      { f:"Kolonáda na Rajstně (Reistenkolonnade) - by Pudelek.JPG", t:"Kolonáda v plnej šírke" },
+      { f:"Valtice, Reistna, sloupy.jpg", t:"Detail stĺporadia" }
+    ]
+  },
+  {
+    title: "Kostol Nanebovzatia Panny Márie",
+    desc: "Ranobarokový farský kostol na námestí Slobody patrí k najstarším barokovým chrámom na Morave; vznikol v 17. storočí z podnetu Lichtenštajnovcov. Jeho dvojvežové priečelie dominuje historickému centru mesta. Vnútri sa nachádza bohatá oltárna výzdoba a s kostolom je úzko spätá aj pohrebná tradícia kniežacieho rodu.",
+    items: [
+      { f:"Valtice (Feldsberg) - Kostel Nanebevzetí Panny Marie.JPG", t:"Farský kostol na námestí" },
+      { f:"Valtice (Feldsberg) - Kostel Nanebevzetí Panny Marie 2.JPG", t:"Priečelie kostola s vežami" }
+    ]
+  },
+  {
+    title: "Bylinková záhrada",
+    desc: "Obnovená bylinková záhrada pri zámku predstavuje desiatky druhov liečivých a aromatických rastlín usporiadaných do okrasných záhonov. Nadväzuje na dávnu tradíciu pestovania byliniek v kláštorných a panských záhradách. Je obľúbeným miestom na oddych a vďaka náučným popisom aj na vzdelávacie prechádzky pre rodiny a školské skupiny.",
+    items: [
+      { f:"Bylinková zahrada Tiree Chmelar ve Valticích.jpg", t:"Bylinková záhrada pri zámku" },
+      { f:"Bylinková záhrada Valtice - panoramio.jpg", t:"Záhrada z výšky" }
+    ]
+  },
+  {
+    title: "Mesto, námestie a architektúra",
+    desc: "Srdcom Valtíc je námestie Slobody, ktoré lemujú meštianske domy, baroková kašna a mariánsky stĺp; nechýba ani socha sv. Jána Nepomuckého. Z námestia vedie ulica Zámecká priamo k monumentálnemu vstupu do zámku. Celé historické jadro je súčasťou pamiatkovej zóny a komponovanej krajiny zapísanej v zozname svetového dedičstva UNESCO.",
+    items: [
+      { f:"Valtice - Zámecká - View North to kostel Nanebevzetí Panny Marie.jpg", t:"Ulica Zámecká s pohľadom na kostol" },
+      { f:"Valtice - Zámecká - View NE.jpg", t:"Historická ulica Zámecká" },
+      { f:"Kašna (Valtice), nám. Svobody, Valtice.JPG", t:"Kašna na námestí Svobody" },
+      { f:"Měšťanský dům (Valtice), nám. Svobody 4, Valtice.JPG", t:"Meštiansky dom na námestí" },
+      { f:"Socha sv. Jana Nepomuckého (Valtice), Mikulovská, Valtice.JPG", t:"Socha sv. Jána Nepomuckého" },
+      { f:"Valtice, zahradní restaurace \"Vinařský dům\", náměstí Svobody 16, zezadu.jpg", t:"Vinársky dom na námestí" }
+    ]
+  },
+  {
+    title: "Valtické podzemie a vinné sklepy",
+    desc: "Pod Valticami sa skrýva unikátny labyrint trinástich vzájomne prepojených historických vinných sklepov v celkovej dĺžke okolo 900 metrov a v hĺbke až jedenásť metrov. Vznik sklepov siaha k roku 1289 a založeniu kláštora minoritov; po obnove dnes slúžia zážitkovej vinárskej turistike s riadenými degustáciami, ktoré vedú „sklepiéri“. Valtice sú hlavným mestom vína – okrem Valtického Podzemia tu pôsobí aj rodinné vinárstvo CHÂTEAU VALTICE so Salónom vín ČR. <b>Podrobné otváracie hodiny a kontakty nájdeš nižšie v sekcii Praktické informácie.</b>",
+    items: [
+      { f:"Valtice, vstup do podzemí.jpg", t:"Vstup do Valtického podzemia" },
+      { f:"Schody ve Valtickém podzemí.jpg", t:"Schodisko do labyrintu sklepov" },
+      { f:"Valtické podzemí (01).jpg", t:"Klenuté chodby historických sklepov" },
+      { f:"Valtické podzemí (03).jpg", t:"Tehlové oblúky valtických murárov" },
+      { f:"Valtické podzemí (05).jpg", t:"Degustačné zákutie v podzemí" },
+      { f:"Valtické podzemí (09).jpg", t:"Atmosféra podzemného mesta vína" }
+    ]
+  }
+];
+
+const filePath = f => "https://commons.wikimedia.org/wiki/Special:FilePath/" + encodeURIComponent(f) + "?width=1400";
+const filePage = f => "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(f);
+
+const linkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+
+const gallery = document.getElementById("gallery");
+let n = 0;
+groups.forEach((g, gi) => {
+  const sec = document.createElement("section");
+  sec.className = "group";
+  sec.innerHTML = `<div class="group-head">
+      <span class="group-num">${String(gi+1).padStart(2,"0")}</span>
+      <h2>${g.title}</h2><span class="rule"></span>
+    </div>${g.desc ? `<p class="group-desc">${g.desc}</p>` : ""}`;
+  const grid = document.createElement("div");
+  grid.className = "grid";
+  g.items.forEach(it => {
+    n++;
+    const card = document.createElement("figure");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="imgbox">
+        <div class="ph">${it.t}</div>
+        <img loading="lazy" src="${filePath(it.f)}" alt="${it.t}"
+             onload="this.previousElementSibling.style.display='none'"
+             onerror="this.style.display='none'">
+        <span class="badge">CC · Commons</span>
+      </div>
+      <figcaption>
+        <span class="cap-t">${String(n).padStart(2,"0")} · ${it.t}</span>
+        <span class="cap-b">
+          <a class="src" href="${filePage(it.f)}" target="_blank" rel="noopener">${linkIcon} Originál / zdroj</a>
+          <span class="author">Wikimedia Commons</span>
+        </span>
+      </figcaption>`;
+    grid.appendChild(card);
+  });
+  sec.appendChild(grid);
+  gallery.appendChild(sec);
+});
+</script>
+</body>
+</html>
