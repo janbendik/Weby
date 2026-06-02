@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reštaurácie v Mikulove — recenzie a odporúčania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Spectral:wght@300;400;500&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  html{color-scheme:light only}
+  :root{
+    --ink:#241a14; --paper:#f4ece0; --paper-2:#ece0cf;
+    --wine:#6e1f2a; --wine-soft:#9a3b41; --gold:#b8893b;
+    --line:#cdbca4; --green:#3f6b3f; --shadow:0 18px 40px -22px rgba(48,28,18,.55);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, #fbf5ea 0%, transparent 60%),var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  header.hero{padding:64px 26px 30px;max-width:1080px;margin:0 auto;border-bottom:1px solid var(--line);text-align:center}
+  .kicker{font-family:"Archivo",sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--wine);font-weight:700;margin:0 0 16px}
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2.4rem,6vw,4.4rem);line-height:.98;margin:0 0 14px;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--wine)}
+  .lead{font-size:clamp(1.02rem,1.6vw,1.18rem);max-width:1180px;color:#4a382b;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-family:"Archivo",sans-serif;font-size:.78rem;letter-spacing:.04em;color:#6b513e}
+  .meta b{color:var(--ink)}
+  main{padding:10px 0 0}
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:24px 0}
+  @media(max-width:900px){.cards-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+  .card{background:#fffaf2;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+  .card-photo{position:relative;aspect-ratio:4/3;background:var(--paper-2);overflow:hidden;border-bottom:1px solid var(--line)}
+  .card-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .card-photo .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a715b;font-family:"Archivo",sans-serif;font-size:.9rem}
+  .card-photo .pbadge{position:absolute;top:12px;right:12px;font-family:"Archivo",sans-serif;font-size:.62rem;letter-spacing:.06em;background:rgba(36,26,20,.82);color:#f4ece0;padding:4px 9px;border-radius:3px;font-weight:600}
+  .ph-link{display:block;text-decoration:none;cursor:pointer}
+  .ph-link .ph{text-align:center;line-height:1.5;transition:color .2s ease}
+  .ph-link:hover{background:#e4d4bf}
+  .card-head{padding:18px 20px 14px;border-bottom:1px solid var(--line);position:relative}
+  .card-num{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:1.5rem;color:var(--gold);line-height:1;display:block;margin-bottom:6px}
+  .card-titles h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.3rem;margin:0 0 6px;letter-spacing:-.01em;line-height:1.2}
+  .card-titles h2 a{white-space:nowrap;margin-left:4px}
+  .card-titles .tag{font-family:"Archivo",sans-serif;font-size:.76rem;letter-spacing:.03em;color:var(--wine-soft);font-weight:600;display:block;margin-bottom:10px}
+  .card-badge{display:inline-block;font-family:"Archivo",sans-serif;font-size:.64rem;letter-spacing:.06em;background:var(--wine);color:var(--paper);padding:5px 10px;border-radius:20px;font-weight:700}
+  .stats{display:flex;flex-direction:column;gap:6px;padding:12px 20px;background:var(--paper-2);font-family:"Archivo",sans-serif;font-size:.78rem;color:#54402f}
+  .stats .st b{color:var(--ink)}
+  .stars{color:var(--gold);font-weight:700}
+  .card-body{padding:16px 20px 20px;display:flex;flex-direction:column;flex:1}
+  .desc{margin:0 0 16px;color:#4a382b;font-size:.94rem;line-height:1.55;text-align:left;-webkit-hyphens:auto;hyphens:auto}
+  .pc{display:flex;flex-direction:column;gap:14px;margin:0 0 16px}
+  .pc h3{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 7px}
+  .pros h3{color:var(--green)}
+  .cons h3{color:var(--wine)}
+  .pc ul{margin:0;padding-left:0;list-style:none}
+  .pc li{font-size:.88rem;color:#4a382b;margin:0 0 6px;padding-left:20px;position:relative;line-height:1.4}
+  .pros li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+  .cons li::before{content:"–";position:absolute;left:2px;color:var(--wine);font-weight:700}
+  .forwhom{background:var(--paper-2);border-left:4px solid var(--gold);border-radius:4px;padding:12px 14px;font-size:.88rem;color:#54402f;line-height:1.5;margin-top:auto}
+  .forwhom b{color:var(--wine)}
+  .compare{max-width:1080px;margin:48px auto 0;padding:0 26px}
+  .compare-head{display:flex;align-items:baseline;gap:16px;margin:0 0 18px}
+  .compare-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);margin:0}
+  .compare-head .rule{flex:1;height:1px;background:var(--line);transform:translateY(-8px)}
+  table.cmp{width:100%;border-collapse:collapse;font-size:.92rem;background:#fffaf2;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+  table.cmp th,table.cmp td{text-align:left;padding:13px 18px;vertical-align:top;border-top:1px solid var(--line)}
+  table.cmp thead th{background:var(--wine);color:var(--paper);font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-top:none}
+  table.cmp td.name{font-family:"Fraunces",serif;font-weight:600;color:var(--ink);font-size:1.02rem}
+  table.cmp tr:nth-child(even) td{background:rgba(231,217,194,.28)}
+  .note{max-width:1080px;margin:30px auto 0;padding:0 26px}
+  .note-inner{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--gold);padding:16px 20px;border-radius:4px;font-size:.92rem;color:#54402f}
+  .note-inner b{color:var(--wine)}
+  .sources{max-width:1080px;margin:34px auto 0;padding:0 26px}
+  .sources h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 14px}
+  .sources ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+  @media(max-width:680px){.sources ul{grid-template-columns:1fr}}
+  .sources li{font-size:.9rem;color:#4a382b;border-bottom:1px dashed var(--line);padding:8px 0}
+  .sources a{color:var(--wine);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .sources a:hover{text-decoration:underline}
+  .sources a svg{width:12px;height:12px}
+  .sources .s-desc{display:block;color:#8a715b;font-size:.8rem;margin-top:2px}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding:28px 26px 70px;max-width:1080px;margin-left:auto;margin-right:auto;font-size:.86rem;color:#6b513e}
+  footer b{color:var(--ink)}
+  .tools{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+  .btn{font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.04em;border:1px solid var(--wine);color:var(--wine);background:transparent;padding:10px 18px;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease}
+  .btn:hover{background:var(--wine);color:var(--paper)}
+  @media print{.tools{display:none}.card{break-inside:avoid;box-shadow:none}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Mikulov · Pálava · kam na jedlo</p>
+  <h1>Reštaurácie v Mikulove<br><em>recenzie a odporúčania</em></h1>
+  <p class="lead">Tri najlepšie mikulovské podniky vybrané podľa hodnotení z Google Máp a odbornej kritiky (TripAdvisor, gastronomické rebríčky) — s plusmi, mínusmi a odporúčaním, pre koho sa ktorá reštaurácia hodí.</p>
+  </div>
+  <p style="margin-top:18px"><a href="./" style="font-family:'Archivo',sans-serif;font-size:.82rem;font-weight:600;color:var(--wine);text-decoration:none">← Späť na sprievodcu mestom</a></p>
+</header>
+
+<main class="wrap"><div class="cards-grid">
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Pedro's Streetfood Bistro</div>
+      <img loading="lazy" src="https://www.gourmetjiznimorava.cz/wp-content/uploads/2021/10/Pedros-4-scaled.jpg" alt="Pedro's Streetfood Bistro" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">01</span>
+      <div class="card-titles">
+        <h2>Pedro's Streetfood Bistro <a href="https://maps.app.goo.gl/5oG3ZyuTHAY8jpCG9"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Najvyššie hodnotené · americký streetfood, burgre</span>
+      </div>
+      <span class="card-badge">Najvyššie hodnotené</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,8 <span style="color:#8a715b">(1 370+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> St–Ne 12:00–20:30 · Po–Ut zatvorené</span>
+      <span class="st"><b>Cena:</b> €€ (stredná)</span>
+      <span class="st"><b>Platba kartou:</b> ✓ áno — over si telefonicky</span>
+      <span class="st"><b>Klimatizácia:</b> over si telefonicky</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420704891000" style="color:var(--wine);font-weight:600;text-decoration:none">+420 704 891 000</a></span>
+      <span class="st"><b>Adresa:</b> Brněnská 8/3, Mikulov</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Najvyššie hodnotené bistro v Mikulove, ktoré nadviazalo na pôvodný foodtruckový koncept z Ledníc. Moderný americký a mexický streetfood — burgery, hot dogy, sandwiche, tacos a quesadillas — z kvalitných lokálnych surovín (vyzreté hovädzie od Maso Klouda, domáce hranolky smažené na hovädzom tuku, domáce omáčky). K tomu domáce limonády a remeselné pivo na čepu. Interiér v štýle inšpirovanom svetom Fallout. Dvakrát po sebe vyhralo anketu Juhomoravské bistro roka.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Vynikajúce burgery a streetfood z kvalitných lokálnych surovín</li><li>Domáce hranolky, omáčky, limonády aj remeselné pivo na čepu</li><li>Ocenené „Juhomoravské bistro roka“ (2× po sebe)</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Po–Ut zatvorené — over si deň návštevy</li><li>Cez víkend pri plnom bistre dlhšie čakanie (málo personálu)</li><li>Menšie porcie podľa časti recenzií</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre milovníkov kvalitného streetfoodu a burgerov v neformálnom prostredí. Skvelé na obed či rýchlu večeru počas prehliadky mesta. Pozor na zatvorené pondelky a utorky.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Vinařství Radosti</div>
+      <img loading="lazy" src="https://e-penziony.cz/obrazky/72429/apartmany-vinarstvi-radosti-mikulov-15-9c73.jpg" alt="Vinařství Radosti" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">02</span>
+      <div class="card-titles">
+        <h2>Vinařství Radosti <a href="https://maps.app.goo.gl/xdZKdxuH57Fo8zew8"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Elegantná reštaurácia · víno · zážitková gastronómia</span>
+      </div>
+      <span class="card-badge">Víno a gastronómia</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,7 <span style="color:#8a715b">(870+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> Po–Ne 12:00–22:00</span>
+      <span class="st"><b>Cena:</b> €€€ (vyššia cenová hladina)</span>
+      <span class="st"><b>Platba kartou:</b> ✓ áno — over si telefonicky</span>
+      <span class="st"><b>Klimatizácia:</b> over si telefonicky</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420703144007" style="color:var(--wine);font-weight:600;text-decoration:none">+420 703 144 007</a></span>
+      <span class="st"><b>Adresa:</b> Vídeňská 237/5, Mikulov</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Elegantná reštaurácia s vlastným vinárstvom v centre Mikulova, kde sa snúbi špičkové jedlo s domácimi vínami. Hostia opakovane vyzdvihujú luxusnú chuť každého jedla, vyvážené kombinácie a profesionálnu obsluhu, ktorá vie odporučiť víno k chodu. K dispozícii je interiér aj vonkajšie posedenie, dôraz sa kladie na atmosféru a kvalitu.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Špičkovo pripravené jedlo s vyváženými chuťami</li><li>Vlastné vína a odborné párovanie k jedlu, znalá obsluha</li><li>Elegantný interiér aj vonkajšie posedenie, dobrý pomer cena/kvalita</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Vyššia cenová hladina (no za kvalitu)</li><li>Parkovanie v okolí obmedzené</li><li>V sezóne odporúčaná rezervácia</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre milovníkov vína a kvalitnej gastronómie, na slávnostnejšiu večeru či romantické posedenie. Najlepšia voľba, ak chceš spojiť výborné jedlo s lokálnym vínom.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Bistro Drogérka</div>
+      <img loading="lazy" src="https://www.bistrodrogerka.cz//img/s1.jpg" alt="Bistro Drogérka" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">03</span>
+      <div class="card-titles">
+        <h2>Bistro Drogérka <a href="https://maps.app.goo.gl/gdc3cznvFzzXGVpTA"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Moderné bistro v centre · najviac recenzií</span>
+      </div>
+      <span class="card-badge">Najviac recenzií</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,6 <span style="color:#8a715b">(2 300+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> Po–Št, Ne 9:00–21:00 · Pi–So 9:00–22:00</span>
+      <span class="st"><b>Cena:</b> €€ (stredná)</span>
+      <span class="st"><b>Platba kartou:</b> ✓ áno — over si telefonicky</span>
+      <span class="st"><b>Klimatizácia:</b> over si telefonicky</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420724340722" style="color:var(--wine);font-weight:600;text-decoration:none">+420 724 340 722</a></span>
+      <span class="st"><b>Adresa:</b> Náměstí 28/23, Mikulov</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Príjemné moderné bistro s terasou priamo na námestí — s najväčším počtom recenzií v meste a stálica odporúčaní gastroblogov. Ponúka šaláty, sendviče, menšie chody, kávu aj dezerty; domácou špecialitou je „Starostov rezeň“ s nádychom karí. Ceny sú rozumné a porcie štedré (obed sa dá pod 10 €). Jedlo je chutné a moderne naservírované, obsluha pozorná.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Štedré porcie a chutné moderné jedlo za rozumné ceny</li><li>Veľký výber dezertov, dobrý výber piva a vína</li><li>Skvelá poloha na námestí, pozorná obsluha</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Často plno — odporúča sa rezervácia</li><li>V špičke pri malom počte personálu môže byť rušnejšie</li><li>Časť jedál podľa recenzií „dobré, no nie výnimočné“</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre tých, čo chcú kvalitný obed či ľahšie jedlo a dezert v centre za dobrú cenu. Vhodné pre páry, rodiny aj jednotlivcov počas prehliadky mesta.</div>
+    </div>
+  </div></div>
+</main>
+
+<section class="compare">
+  <div class="compare-head"><h2>Rýchle porovnanie</h2><span class="rule"></span></div>
+  <table class="cmp">
+    <thead><tr><th>Reštaurácia</th><th>Silná stránka</th><th>Ideálne pre</th></tr></thead>
+    <tbody>
+      <tr><td class="name">Pedro's Streetfood Bistro</td><td>Najvyššie hodnotené, streetfood a burgre</td><td>Neformálny obed/večera (Po–Ut zatvorené)</td></tr>
+      <tr><td class="name">Vinařství Radosti</td><td>Víno a zážitková gastronómia</td><td>Slávnostná večera, milovníci vína</td></tr>
+      <tr><td class="name">Bistro Drogérka</td><td>Moderné bistro, najviac recenzií</td><td>Obed/dezert v centre za dobrú cenu</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="note">
+  <div class="note-inner">
+    <b>Tip:</b> Tieto tri pokrývajú rôzne nálady — <b>Pedro's</b> na streetfood a burgre, <b>Vinařství Radosti</b> na slávnostnejšiu večeru s vínom a <b>Drogérka</b> na pohodový obed či dezert v centre. Pedro's má v pondelok a utorok zatvorené.
+  </div>
+</div>
+
+<section class="sources">
+  <h2>Zdroje recenzií</h2>
+  <ul>
+      <li><a href="https://www.google.com/maps/search/restaurace+Mikulov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Google Mapy</a><span class="s-desc">Hodnotenia a recenzie všetkých troch podnikov</span></li>
+      <li><a href="https://www.kudyznudy.cz/aktivity/pedro-s-streetfood-bistro-v-mikulove" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Kudy z nudy — Pedro's Streetfood Bistro</a><span class="s-desc">Popis a ocenenia bistra</span></li>
+      <li><a href="https://www.vinoradosti.cz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Vinařství Radosti</a><span class="s-desc">Oficiálna stránka reštaurácie a vinárstva</span></li>
+      <li><a href="https://www.bistrodrogerka.cz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Bistro Drogérka</a><span class="s-desc">Oficiálna stránka bistra</span></li>
+      <li><a href="https://wanderlog.com/list/geoCategory/201292/where-to-eat-best-restaurants-in-mikulov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Wanderlog — najlepšie reštaurácie v Mikulove</a><span class="s-desc">Rebríček a recenzie</span></li>
+      <li><a href="https://loudavymkrokem.cz/sk/mikulov-cesko-co-vidiet/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Loudavým krokem</a><span class="s-desc">Tipy na jedlo v Mikulove</span></li>
+      <li><a href="https://www.mikulov.cz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Mesto Mikulov</a><span class="s-desc">Oficiálny zoznam reštaurácií</span></li>
+  </ul>
+  <p style="font-size:.85rem;color:#8a715b;font-style:italic;margin-top:16px">Poznámka: priame recenzie z Facebooku sa cez verejné vyhľadávanie nedajú spoľahlivo načítať (Facebook ich nezobrazuje bez prihlásenia), preto hodnotenie vychádza z Google Máp, TripAdvisoru, Firmy.cz a gastroblogov. Hodnotenia a otváracie hodiny sa môžu meniť — pred návštevou si over aktuálny stav.</p>
+</section>
+<footer class="wrap">
+  <div class="tools">
+    <button class="btn" onclick="window.print()">🖨︎ Tlač / Uložiť ako PDF</button>
+  </div>
+  <p><b>Prehľad reštaurácií.</b> Spracované z verejne dostupných recenzií a hodnotení. Citované hodnotenia sú orientačné a vyjadrujú názory recenzentov na uvedených portáloch.</p>
+</footer>
+
+</body>
+</html>
