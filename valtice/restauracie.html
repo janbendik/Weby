@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reštaurácie vo Valticiach — recenzie a odporúčania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Spectral:wght@300;400;500&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  html{color-scheme:light only}
+  :root{
+    --ink:#241a14; --paper:#f4ece0; --paper-2:#ece0cf;
+    --wine:#6e1f2a; --wine-soft:#9a3b41; --gold:#b8893b;
+    --line:#cdbca4; --green:#3f6b3f; --shadow:0 18px 40px -22px rgba(48,28,18,.55);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, #fbf5ea 0%, transparent 60%),var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  header.hero{padding:64px 26px 30px;max-width:1080px;margin:0 auto;border-bottom:1px solid var(--line);text-align:center}
+  .kicker{font-family:"Archivo",sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--wine);font-weight:700;margin:0 0 16px}
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2.4rem,6vw,4.4rem);line-height:.98;margin:0 0 14px;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--wine)}
+  .lead{font-size:clamp(1.02rem,1.6vw,1.18rem);max-width:1180px;color:#4a382b;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-family:"Archivo",sans-serif;font-size:.78rem;letter-spacing:.04em;color:#6b513e}
+  .meta b{color:var(--ink)}
+  main{padding:10px 0 0}
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:24px 0}
+  @media(max-width:900px){.cards-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+  .card{background:#fffaf2;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+  .card-photo{position:relative;aspect-ratio:4/3;background:var(--paper-2);overflow:hidden;border-bottom:1px solid var(--line)}
+  .card-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .card-photo .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a715b;font-family:"Archivo",sans-serif;font-size:.9rem}
+  .card-photo .pbadge{position:absolute;top:12px;right:12px;font-family:"Archivo",sans-serif;font-size:.62rem;letter-spacing:.06em;background:rgba(36,26,20,.82);color:#f4ece0;padding:4px 9px;border-radius:3px;font-weight:600}
+  .ph-link{display:block;text-decoration:none;cursor:pointer}
+  .ph-link .ph{text-align:center;line-height:1.5;transition:color .2s ease}
+  .ph-link:hover{background:#e4d4bf}
+  .card-head{padding:18px 20px 14px;border-bottom:1px solid var(--line);position:relative}
+  .card-num{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:1.5rem;color:var(--gold);line-height:1;display:block;margin-bottom:6px}
+  .card-titles h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.35rem;margin:0 0 6px;letter-spacing:-.01em;line-height:1.15}
+  .card-titles .tag{font-family:"Archivo",sans-serif;font-size:.76rem;letter-spacing:.03em;color:var(--wine-soft);font-weight:600;display:block;margin-bottom:10px}
+  .card-badge{display:inline-block;font-family:"Archivo",sans-serif;font-size:.64rem;letter-spacing:.06em;background:var(--wine);color:var(--paper);padding:5px 10px;border-radius:20px;font-weight:700}
+  .stats{display:flex;flex-direction:column;gap:6px;padding:12px 20px;background:var(--paper-2);font-family:"Archivo",sans-serif;font-size:.78rem;color:#54402f}
+  .stats .st b{color:var(--ink)}
+  .stars{color:var(--gold);font-weight:700}
+  .card-body{padding:16px 20px 20px;display:flex;flex-direction:column;flex:1}
+  .desc{margin:0 0 16px;color:#4a382b;font-size:.94rem;line-height:1.55;text-align:left;-webkit-hyphens:auto;hyphens:auto}
+  .pc{display:flex;flex-direction:column;gap:14px;margin:0 0 16px}
+  .pc h3{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 7px}
+  .pros h3{color:var(--green)}
+  .cons h3{color:var(--wine)}
+  .pc ul{margin:0;padding-left:0;list-style:none}
+  .pc li{font-size:.88rem;color:#4a382b;margin:0 0 6px;padding-left:20px;position:relative;line-height:1.4}
+  .pros li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+  .cons li::before{content:"–";position:absolute;left:2px;color:var(--wine);font-weight:700}
+  .forwhom{background:var(--paper-2);border-left:4px solid var(--gold);border-radius:4px;padding:12px 14px;font-size:.88rem;color:#54402f;line-height:1.5;margin-top:auto}
+  .forwhom b{color:var(--wine)}
+  .compare{max-width:1080px;margin:48px auto 0;padding:0 26px}
+  .compare-head{display:flex;align-items:baseline;gap:16px;margin:0 0 18px}
+  .compare-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);margin:0}
+  .compare-head .rule{flex:1;height:1px;background:var(--line);transform:translateY(-8px)}
+  table.cmp{width:100%;border-collapse:collapse;font-size:.92rem;background:#fffaf2;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+  table.cmp th,table.cmp td{text-align:left;padding:13px 18px;vertical-align:top;border-top:1px solid var(--line)}
+  table.cmp thead th{background:var(--wine);color:var(--paper);font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-top:none}
+  table.cmp td.name{font-family:"Fraunces",serif;font-weight:600;color:var(--ink);font-size:1.02rem}
+  table.cmp tr:nth-child(even) td{background:rgba(231,217,194,.28)}
+  .note{max-width:1080px;margin:30px auto 0;padding:0 26px}
+  .note-inner{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--gold);padding:16px 20px;border-radius:4px;font-size:.92rem;color:#54402f}
+  .note-inner b{color:var(--wine)}
+  .sources{max-width:1080px;margin:34px auto 0;padding:0 26px}
+  .sources h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 14px}
+  .sources ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+  @media(max-width:680px){.sources ul{grid-template-columns:1fr}}
+  .sources li{font-size:.9rem;color:#4a382b;border-bottom:1px dashed var(--line);padding:8px 0}
+  .sources a{color:var(--wine);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .sources a:hover{text-decoration:underline}
+  .sources a svg{width:12px;height:12px}
+  .sources .s-desc{display:block;color:#8a715b;font-size:.8rem;margin-top:2px}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding:28px 26px 70px;max-width:1080px;margin-left:auto;margin-right:auto;font-size:.86rem;color:#6b513e}
+  footer b{color:var(--ink)}
+  .tools{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+  .btn{font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.04em;border:1px solid var(--wine);color:var(--wine);background:transparent;padding:10px 18px;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease}
+  .btn:hover{background:var(--wine);color:var(--paper)}
+  @media print{.tools{display:none}.card{break-inside:avoid;box-shadow:none}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Valtice · Lednicko‑valtický areál · kam na jedlo</p>
+  <h1>Reštaurácie vo Valticiach<br><em>recenzie a odporúčania</em></h1>
+  <p class="lead">Tri najlepšie valtické podniky vybrané podľa hodnotení z Google Máp a odbornej kritiky (TripAdvisor, gastronomické rebríčky) — s plusmi, mínusmi a odporúčaním, pre koho sa ktorá reštaurácia hodí.</p>
+  <p style="margin-top:18px"><a href="./" style="font-family:'Archivo',sans-serif;font-size:.82rem;font-weight:600;color:var(--wine);text-decoration:none">← Späť na sprievodcu mestom</a></p>
+</header>
+
+<main class="wrap"><div class="cards-grid">
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Valtická Rychta</div>
+      <img loading="lazy" src="https://d48-a.sdn.cz/d_48/c_img_gS_t/79jKHp.jpeg" alt="Restaurace Valtická Rychta" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">01</span>
+      <div class="card-titles">
+        <h2>Valtická Rychta <a href="https://maps.app.goo.gl/8Tzkp3YACfyHja359"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Tradičná moravská klasika · víno · najvyššie hodnotená</span>
+      </div>
+      <span class="card-badge">Najvyššie hodnotená</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,6 <span style="color:#8a715b">(3 900+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> Po 9:00–19:30 · Ut–So 11:00–21:30 · Ne 11:00–19:30</span>
+      <span class="st"><b>Cena:</b> €€ (stredná)</span>
+      <span class="st"><b>Platba kartou:</b> ✓ áno — over si telefonicky</span>
+      <span class="st"><b>Klimatizácia:</b> over si telefonicky</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420519352366" style="color:var(--wine);font-weight:600;text-decoration:none">+420 519 352 366</a></span>
+      <span class="st"><b>Adresa:</b> Mikulovská 165, Valtice</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Najvyššie a najčastejšie hodnotená reštaurácia vo Valticiach, sídli v jednom z najstarších domov mesta. Funguje od roku 1993 a patrí k stáliciam moravskej gastronómie — bola zaradená medzi 100 najlepších reštaurácií ČR v sprievodcoch „Šťastný Jim“ aj v rebríčku MF Dnes. Špecialitami sú pečené kolienka, rebierka a „Starostov rezeň“, k tomu výber excelentných vín z južnej Moravy. V lete je príjemná čiastočne zastrešená terasa.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Vynikajúce tradičné jedlo (chválený candát, kačica, husacia polievka)</li><li>Výber kvalitných vín z južnej Moravy, profesionálna obsluha</li><li>Útulný interiér aj letná terasa, dobrý pomer cena/výkon</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Cez sezónu býva plno — odporúča sa rezervácia</li><li>Wi‑Fi nie je samozrejmosťou</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre milovníkov tradičnej moravskej kuchyne a vína, ktorí ocenia históriu a kvalitu. Vhodná pre páry, rodiny aj skupiny. Najistejšia voľba vo Valticiach.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Besední dům</div>
+      <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCG3kUyG7Wjf9s4J6GU6wfYLoWa-QiLHqdsA&s" alt="Restaurace Besední dům" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">02</span>
+      <div class="card-titles">
+        <h2>Besední dům <a href="https://maps.app.goo.gl/8Yp5WZirakMSrCku8"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Prvorepubliková elegancia · wine & wellness hotel</span>
+      </div>
+      <span class="card-badge">Elegancia a pohoda</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,6 <span style="color:#8a715b">(170+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> Po–Št, Ne 10:00–22:00 · Pi–So 10:00–24:00</span>
+      <span class="st"><b>Cena:</b> €€ (stredná)</span>
+      <span class="st"><b>Platba kartou:</b> ✓ áno — over si telefonicky</span>
+      <span class="st"><b>Klimatizácia:</b> ✓ áno (klimatizovaný hotel)</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420776629533" style="color:var(--wine);font-weight:600;text-decoration:none">+420 776 629 533</a></span>
+      <span class="st"><b>Adresa:</b> Mikulovská 173, Valtice</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Reštaurácia butikového wine & wellness hotela Besední dům v prvorepublikovom štýle, priamo v centre mesta. Zameriava sa na českú a moravskú kuchyňu, no v menu nájdete aj talianske a francúzske sezónne špeciality (hovädzie rillettes, domáca králičia paštéta, čerstvé cestoviny). Dôraz kladú na lokálne suroviny z Pálavy a južnej Moravy, domáce pečivo a dezerty. Hotel získal víťazstvo v ankete Czech Hotel Awards 2022.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Krásny, príjemný interiér prvorepublikového štýlu</li><li>Kvalitné jedlo z lokálnych surovín, domáce dezerty a pečivo</li><li>Spokojnosť hostí s cenami, súčasťou je wellness hotel</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Menší počet hodnotení (novší podnik)</li><li>Skôr hotelová reštaurácia — v sezóne over si kapacitu</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre tých, čo chcú kvalitné jedlo v elegantnom a pokojnom prostredí, prípadne spojiť s pobytom či wellness. Vhodná na pohodovú večeru aj rodinné posedenie.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-photo">
+      <div class="ph">Pivovar Feldsberg</div>
+      <img loading="lazy" src="https://ceskepivo-ceskezlato.cz/fota/pivovary/F/Feldsberg-021.jpg" alt="Pivovar a restaurace Feldsberg" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+      <span class="pbadge">© zdroj</span>
+    </div>
+    <div class="card-head">
+      <span class="card-num">03</span>
+      <div class="card-titles">
+        <h2>Pivovar Feldsberg <a href="https://maps.app.goo.gl/81y3xLogXiAQnGRY6"><img src="https://cdn-icons-png.magnific.com/256/2642/2642502.png" width="30" height="30" alt="Google Maps" border="0"></a></h2>
+        <span class="tag">Vlastný pivovar · česká kuchyňa · terasa</span>
+      </div>
+      <span class="card-badge">TOP na pivo</span>
+    </div>    <div class="stats">
+      <span class="st"><b>Google:</b> <span class="stars">★</span> 4,4 <span style="color:#8a715b">(1 600+)</span></span>
+      <span class="st"><b>Otváracie hodiny:</b> Št–So 11:00–22:00 · Ne 11:00–21:00 · Po–St zatvorené</span>
+      <span class="st"><b>Cena:</b> €€ (stredná)</span>
+      <span class="st"><b>Platba kartou:</b> len hotovosť</span>
+      <span class="st"><b>Klimatizácia:</b> over si telefonicky</span>
+      <span class="st"><b>Telefón:</b> <a href="tel:+420519321785" style="color:var(--wine);font-weight:600;text-decoration:none">+420 519 321 785</a></span>
+      <span class="st"><b>Adresa:</b> Zámecká 1222, Valtice</span>
+    </div>
+    <div class="card-body">
+      <p class="desc">Pivovar s reštauráciou a penziónom blízko zámku, s vlastným pivom (10° aj 12°). Ponúka pestré menu českej kuchyne — cestoviny, rezeň, sviečkovú, ale aj burgery, polievky a dezerty (napríklad tiramisu). Hostia chvália príjemnú obsluhu, veľké porcie a útulnú verandu/terasu. Skvelá voľba na zmenu po ochutnávke vína.</p>
+      <div class="pc">
+        <div class="pros"><h3>Plusy</h3><ul><li>Vlastné remeselné pivo (10° a 12°), dobré k jedlu</li><li>Veľké porcie, rýchly servis, pestré menu vrátane burgerov</li><li>Útulná atmosféra a veľká veranda/terasa</li></ul></div>
+        <div class="cons"><h3>Mínusy</h3><ul><li>Platba LEN v hotovosti (cash only)</li><li>Po–St zatvorené — over si deň návštevy</li><li>Kvalita niektorých chodov (polievka) podľa recenzií kolíše</li></ul></div>
+      </div>
+      <div class="forwhom"><b>Pre koho je vhodná:</b> Pre milovníkov dobrého piva a poctivej českej kuchyne v uvoľnenom prostredí. Vezmi si hotovosť a over si otváracie dni (Po–St zatvorené).</div>
+    </div>
+  </div></div>
+</main>
+
+<section class="compare">
+  <div class="compare-head"><h2>Rýchle porovnanie</h2><span class="rule"></span></div>
+  <table class="cmp">
+    <thead><tr><th>Reštaurácia</th><th>Silná stránka</th><th>Ideálne pre</th></tr></thead>
+    <tbody>
+      <tr><td class="name">Valtická Rychta</td><td>Najvyššie hodnotená, tradičná klasika + víno</td><td>Najistejšia voľba, páry, rodiny, skupiny</td></tr>
+      <tr><td class="name">Besední dům</td><td>Elegancia, lokálne suroviny, wellness hotel</td><td>Pokojná večera, pobyt s wellness</td></tr>
+      <tr><td class="name">Feldsberg</td><td>Vlastné pivo, veľké porcie</td><td>Pivo + jedlo (len hotovosť, Po–St zatvorené)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="note">
+  <div class="note-inner">
+    <b>Tip:</b> Tieto tri pokrývajú rôzne nálady — <b>Valtická Rychta</b> na tradičnú moravskú klasiku a víno, <b>Besední dům</b> na eleganciu a pokoj a <b>Feldsberg</b> na vlastné pivo s českou kuchyňou. Pri Feldsbergu si vezmi hotovosť a over si deň (Po–St zatvorené).
+  </div>
+</div>
+
+<section class="sources">
+  <h2>Zdroje recenzií</h2>
+  <ul>
+      <li><a href="https://www.google.com/maps/search/restaurace+Valtice" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Google Mapy</a><span class="s-desc">Hodnotenia a recenzie všetkých troch podnikov</span></li>
+      <li><a href="https://www.tripadvisor.com/Restaurants-g274722-Valtice_South_Moravian_Region_Moravia.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> TripAdvisor — najlepšie reštaurácie vo Valticiach</a><span class="s-desc">Rebríček a recenzie</span></li>
+      <li><a href="https://www.valtickarychta.cz/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Valtická Rychta</a><span class="s-desc">Oficiálna stránka reštaurácie</span></li>
+      <li><a href="https://www.hotelbesednidum.cz/cs/cafe-restaurant" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Wellness hotel Besední dům</a><span class="s-desc">Café & Restaurant — oficiálna stránka</span></li>
+      <li><a href="https://kapitalio.cz/kam-na-jidlo-valtice-nejlepsi-restaurace/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Kapitalio</a><span class="s-desc">Kam na jídlo Valtice — tipy na reštaurácie</span></li>
+      <li><a href="https://www.tripadvisor.com/Restaurant_Review-g274722-d15073686-Reviews-Pivovar_a_restaurace_FELDSBERG-Valtice_South_Moravian_Region_Moravia.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> TripAdvisor — Feldsberg</a><span class="s-desc">Pivovar a restaurace Feldsberg</span></li>
+      <li><a href="https://www.valtice.eu/turistika/kam-na-jidlo/restaurace/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Mesto Valtice</a><span class="s-desc">Oficiálny zoznam reštaurácií</span></li>
+  </ul>
+  <p style="font-size:.85rem;color:#8a715b;font-style:italic;margin-top:16px">Poznámka: priame recenzie z Facebooku sa cez verejné vyhľadávanie nedajú spoľahlivo načítať (Facebook ich nezobrazuje bez prihlásenia), preto hodnotenie vychádza z Google Máp, TripAdvisoru, Firmy.cz a gastroblogov. Hodnotenia a otváracie hodiny sa môžu meniť — pred návštevou si over aktuálny stav.</p>
+</section>
+<footer class="wrap">
+  <div class="tools">
+    <button class="btn" onclick="window.print()">🖨︎ Tlač / Uložiť ako PDF</button>
+  </div>
+  <p><b>Prehľad reštaurácií.</b> Spracované z verejne dostupných recenzií a hodnotení. Citované hodnotenia sú orientačné a vyjadrujú názory recenzentov na uvedených portáloch.</p>
+</footer>
+
+</body>
+</html>
